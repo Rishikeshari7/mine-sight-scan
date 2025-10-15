@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Layers, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
+import satelliteMap from "@/assets/satellite-map.jpg";
 
 const MapVisualization = () => {
   return (
@@ -24,14 +25,15 @@ const MapVisualization = () => {
       </div>
       
       <div className="aspect-video bg-muted/20 rounded-lg border border-border relative overflow-hidden">
-        {/* Placeholder for map - will integrate Mapbox/Leaflet */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <Layers className="h-12 w-12 mx-auto mb-2 text-muted-foreground" />
-            <p className="text-muted-foreground">Map will be integrated here</p>
-            <p className="text-sm text-muted-foreground mt-1">Upload boundary files to display on map</p>
-          </div>
-        </div>
+        {/* Satellite image background */}
+        <img 
+          src={satelliteMap} 
+          alt="Satellite view of mining area" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Overlay detection areas */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/40"></div>
         
         {/* Map legend */}
         <div className="absolute bottom-4 left-4 bg-card/90 backdrop-blur-sm p-3 rounded-lg border border-border">
