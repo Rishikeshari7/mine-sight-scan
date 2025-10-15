@@ -40,18 +40,22 @@ const FileUploadSection = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {uploadCards.map((card, index) => (
-        <Card key={index} className="p-6 bg-gradient-card border-border shadow-card hover:shadow-glow transition-all duration-300">
+        <Card 
+          key={index} 
+          className="p-6 bg-gradient-card border-2 border-primary/40 shadow-glow hover:shadow-glow-purple hover:border-primary hover:scale-105 transition-all duration-500 group animate-slide-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
           <div className="space-y-4">
-            <div className={`h-12 w-12 rounded-lg bg-muted/20 flex items-center justify-center ${card.color}`}>
-              <card.icon className="h-6 w-6" />
+            <div className={`h-12 w-12 rounded-lg bg-gradient-primary shadow-glow flex items-center justify-center group-hover:animate-float`}>
+              <card.icon className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+              <h3 className={`text-lg font-semibold mb-2 ${card.color}`}>{card.title}</h3>
               <p className="text-sm text-muted-foreground mb-3">{card.description}</p>
               <p className="text-xs text-muted-foreground mb-4">Supported: {card.formats}</p>
             </div>
             <Button 
-              className="w-full gap-2 bg-gradient-primary hover:opacity-90"
+              className="w-full gap-2 bg-gradient-primary hover:scale-110 shadow-glow border-2 border-primary/50 transition-all duration-300 animate-neon-pulse"
               onClick={() => handleFileUpload(card.title)}
             >
               <Upload className="h-4 w-4" />

@@ -8,72 +8,77 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Space/Satellite theme - Deep blues with cyan accents */
-    --background: 220 27% 8%;
-    --foreground: 210 40% 98%;
+    /* Neon Cyberpunk theme - Dark background with vibrant neon accents */
+    --background: 240 10% 5%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Primary: Deep space blue */
-    --primary: 217 91% 60%;
-    --primary-foreground: 220 27% 8%;
+    /* Primary: Neon Cyan */
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 5%;
     
     /* Primary glow for effects */
-    --primary-glow: 190 100% 50%;
+    --primary-glow: 180 100% 70%;
 
-    /* Secondary: Darker blue-gray */
-    --secondary: 220 25% 18%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary: Neon Purple */
+    --secondary: 280 100% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 25% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 8% 15%;
+    --muted-foreground: 240 5% 65%;
 
-    /* Accent: Bright cyan */
-    --accent: 190 100% 50%;
-    --accent-foreground: 220 27% 8%;
+    /* Accent: Neon Pink */
+    --accent: 320 100% 60%;
+    --accent-foreground: 240 10% 5%;
 
-    /* Success: Green for authorized areas */
-    --success: 142 76% 36%;
-    --success-foreground: 210 40% 98%;
+    /* Success: Neon Green */
+    --success: 150 100% 50%;
+    --success-foreground: 240 10% 5%;
 
-    /* Warning: Orange for alerts */
-    --warning: 38 92% 50%;
-    --warning-foreground: 220 27% 8%;
+    /* Warning: Neon Orange */
+    --warning: 30 100% 60%;
+    --warning-foreground: 240 10% 5%;
 
-    /* Destructive: Red for illegal mining */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive: Neon Red */
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 25% 20%;
-    --input: 220 25% 18%;
-    --ring: 190 100% 50%;
+    --border: 240 8% 20%;
+    --input: 240 8% 12%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(190 100% 50%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 27% 8%) 0%, hsl(220 27% 5%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 25% 10%) 100%);
+    /* Neon Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(280 100% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(320 100% 60%) 0%, hsl(280 100% 65%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(240 10% 5%) 0%, hsl(240 10% 3%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 6%) 100%);
+    --gradient-neon: linear-gradient(90deg, hsl(180 100% 50%), hsl(280 100% 65%), hsl(320 100% 60%));
     
-    /* Shadows with glow */
-    --shadow-glow: 0 0 20px hsl(190 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(220 27% 5% / 0.5);
+    /* Neon Glows */
+    --shadow-glow: 0 0 30px hsl(180 100% 50% / 0.5);
+    --shadow-glow-pink: 0 0 30px hsl(320 100% 60% / 0.5);
+    --shadow-glow-purple: 0 0 30px hsl(280 100% 65% / 0.5);
+    --shadow-card: 0 8px 32px hsl(240 10% 3% / 0.8);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 220 27% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 220 27% 8%;
-    --sidebar-accent: 220 25% 15%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 25% 20%;
-    --sidebar-ring: 190 100% 50%;
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 240 10% 5%;
+    --sidebar-accent: 240 8% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 8% 20%;
+    --sidebar-ring: 180 100% 50%;
   }
 }
 

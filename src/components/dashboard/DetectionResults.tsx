@@ -36,15 +36,25 @@ const DetectionResults = () => {
 
   return (
     <div className="space-y-4">
-      {detections.map((detection) => (
-        <Card key={detection.id} className="p-6 bg-gradient-card border-border shadow-card">
+      {detections.map((detection, index) => (
+        <Card 
+          key={detection.id} 
+          className={`p-6 bg-gradient-card border-2 shadow-glow hover:scale-[1.02] transition-all duration-500 group animate-slide-up ${
+            detection.status === "illegal" 
+              ? "border-destructive/40 hover:border-destructive hover:shadow-glow-pink" 
+              : "border-success/40 hover:border-success hover:shadow-glow"
+          }`}
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
           <div className="flex items-start justify-between">
             <div className="flex gap-4 flex-1">
-              <div className={`h-12 w-12 rounded-lg flex items-center justify-center ${
-                detection.status === "illegal" ? "bg-destructive/20" : "bg-success/20"
+              <div className={`h-12 w-12 rounded-lg flex items-center justify-center shadow-glow group-hover:animate-float ${
+                detection.status === "illegal" 
+                  ? "bg-destructive/30 border-2 border-destructive/50" 
+                  : "bg-success/30 border-2 border-success/50"
               }`}>
                 {detection.status === "illegal" ? (
-                  <AlertTriangle className="h-6 w-6 text-destructive" />
+                  <AlertTriangle className="h-6 w-6 text-destructive animate-pulse" />
                 ) : (
                   <CheckCircle2 className="h-6 w-6 text-success" />
                 )}
@@ -52,11 +62,16 @@ const DetectionResults = () => {
               
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <h4 className="font-semibold text-lg">{detection.location}</h4>
-                  <Badge variant={detection.status === "illegal" ? "destructive" : "default"}>
+                  <h4 className={`font-semibold text-lg ${detection.status === "illegal" ? "text-destructive" : "text-success"}`}>
+                    {detection.location}
+                  </h4>
+                  <Badge 
+                    variant={detection.status === "illegal" ? "destructive" : "default"}
+                    className="shadow-glow"
+                  >
                     {detection.status === "illegal" ? "Illegal Mining" : "Authorized"}
                   </Badge>
-                  <Badge variant="outline" className="font-mono text-xs">
+                  <Badge variant="outline" className="font-mono text-xs border-2 border-primary/30">
                     {detection.confidence}% confidence
                   </Badge>
                 </div>
@@ -77,15 +92,15 @@ const DetectionResults = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="gap-2">
+                  <Button variant="outline" size="sm" className="gap-2 border-2 border-primary/30 hover:bg-primary/20 hover:border-primary hover:shadow-glow hover:scale-110 transition-all duration-300">
                     <Eye className="h-4 w-4" />
                     View on Map
                   </Button>
-                  <Button variant="outline" size="sm" className="gap-2">
+                  <Button variant="outline" size="sm" className="gap-2 border-2 border-secondary/30 hover:bg-secondary/20 hover:border-secondary hover:shadow-glow-purple hover:scale-110 transition-all duration-300">
                     <MapPin className="h-4 w-4" />
                     3D View
                   </Button>
-                  <Button variant="outline" size="sm" className="gap-2">
+                  <Button variant="outline" size="sm" className="gap-2 border-2 border-accent/30 hover:bg-accent/20 hover:border-accent hover:shadow-glow-pink hover:scale-110 transition-all duration-300">
                     <Download className="h-4 w-4" />
                     Export Data
                   </Button>
