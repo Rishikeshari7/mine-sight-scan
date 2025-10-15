@@ -7,6 +7,7 @@ import FileUploadSection from "@/components/dashboard/FileUploadSection";
 import MapVisualization from "@/components/dashboard/MapVisualization";
 import VolumeCalculation from "@/components/dashboard/VolumeCalculation";
 import DetectionResults from "@/components/dashboard/DetectionResults";
+import terrainImage from "@/assets/3d-terrain.jpg";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("upload");
@@ -110,11 +111,14 @@ const Dashboard = () => {
           <TabsContent value="3d">
             <Card className="p-6 bg-gradient-card border-border shadow-card">
               <h3 className="text-lg font-semibold mb-4">3D Terrain Visualization</h3>
-              <div className="aspect-video bg-muted/20 rounded-lg flex items-center justify-center border border-border">
-                <div className="text-center">
-                  <Box className="h-12 w-12 mx-auto mb-2 text-muted-foreground animate-float" />
-                  <p className="text-muted-foreground">3D visualization will render here</p>
-                  <p className="text-sm text-muted-foreground mt-1">Upload DEM data to enable 3D view</p>
+              <div className="aspect-video bg-muted/20 rounded-lg border border-border relative overflow-hidden">
+                <img 
+                  src={terrainImage} 
+                  alt="3D terrain visualization of mining pit with DEM data" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/60 flex items-end justify-center pb-6">
+                  <p className="text-sm text-muted-foreground">Upload DEM data to enable interactive 3D controls</p>
                 </div>
               </div>
               <VolumeCalculation />

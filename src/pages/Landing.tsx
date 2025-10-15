@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Satellite, Map, Box, FileText, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import hero3DViz from "@/assets/hero-3d-viz.jpg";
 
 const Landing = () => {
   const features = [
@@ -73,12 +74,14 @@ const Landing = () => {
 
           {/* Hero Visual */}
           <div className="mt-16 relative">
-            <div className="aspect-video rounded-2xl overflow-hidden border border-border shadow-card bg-gradient-card">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Box className="h-20 w-20 mx-auto mb-4 text-primary animate-float" />
-                  <p className="text-lg text-muted-foreground">Interactive 3D Visualization Preview</p>
-                </div>
+            <div className="aspect-video rounded-2xl overflow-hidden border border-border shadow-card bg-gradient-card relative">
+              <img 
+                src={hero3DViz} 
+                alt="Interactive 3D geological terrain visualization with DEM data" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end justify-center pb-8">
+                <p className="text-lg font-medium">Interactive 3D Visualization Preview</p>
               </div>
             </div>
           </div>
